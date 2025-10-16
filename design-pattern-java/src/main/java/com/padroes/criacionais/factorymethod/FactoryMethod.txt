@@ -1,0 +1,52 @@
+// =========================================================
+// MOLDE: PADRÃO FACTORY METHOD (CLÁSSICO GOF)
+// =========================================================
+
+// 1. O Cliente (CLASSE PRINCIPAL DE EXECUÇÃO)
+// CLASSE [NomeDoSeuExemploDemo]:
+//     MÉTODO Estático principal (main):
+//         
+//         // CENÁRIO A: Cria a fábrica e chama o método de negócio.
+//         criador_a = NOVA [CriadorConcretoA]
+//         criador_a.MetodoDeNegocio("ParamA") 
+// 
+//         // CENÁRIO B: Cria a segunda fábrica e chama o método de negócio.
+//         criador_b = NOVA [CriadorConcretoB]
+//         criador_b.MetodoDeNegocio("ParamB") 
+
+
+// 2. O Contrato (A Interface do Produto)
+// INTERFACE [NomeDoProdutoAbstrato]:
+//     MÉTODO AcaoPrincipal(parâmetro)
+
+
+// 3. O Criador Abstrato (Define a estrutura)
+// CLASSE ABSTRATA [NomeDoCriadorAbstrato]:
+//     
+//     // O FACTORY METHOD (A ser implementado pelas subclasses)
+//     MÉTODO ABSTRATO CriarProduto() 
+// 
+//     // Método de Negócio (O fluxo que usa o Factory Method)
+//     MÉTODO MetodoDeNegocio(parâmetro):
+//         produto = CriarProduto() // Chama o Factory Method
+//         produto.AcaoPrincipal(parâmetro)
+
+
+// 4. Os Criadores Concretos (Decidem qual Produto criar)
+// CLASSE [CriadorConcretoA] ESTENDE [CriadorAbstrato]:
+//     MÉTODO CriarProduto():
+//         RETORNAR NOVA [ProdutoConcretoA]
+
+// CLASSE [CriadorConcretoB] ESTENDE [CriadorAbstrato]:
+//     MÉTODO CriarProduto():
+//         RETORNAR NOVA [ProdutoConcretoB]
+
+
+// 5. Os Produtos Concretos (As implementações reais)
+// CLASSE [ProdutoConcretoA] IMPLEMENTA [ProdutoAbstrato]:
+//     MÉTODO AcaoPrincipal(parâmetro):
+//         // Lógica Específica A
+
+// CLASSE [ProdutoConcretoB] IMPLEMENTA [ProdutoAbstrato]:
+//     MÉTODO AcaoPrincipal(parâmetro):
+//         // Lógica Específica B
