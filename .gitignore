@@ -1,0 +1,15 @@
+# Ignorar diretórios e arquivos de build/IDE
+target/
+.vscode/
+.classpath
+.project
+.settings/
+*.log
+*.class
+
+# Arquivos temporários do SO
+.DS_Store
+Thumbs.db
+
+# Ignorar o jar final
+*.jar
